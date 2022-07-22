@@ -7,7 +7,7 @@
     "url": "https://github.com/KristenPire/MoneriumSnap.git"
   },
   "source": {
-    "shasum": "WkaphGiyaV/JZ7RcYPSYQhstvdZFqF9jqyyUpYKXJ/Y=",
+    "shasum": "wEBJCvFxvQ2NrnXFd9mxbfPPd1wfmxn8LtjPNmzhwiQ=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -18,7 +18,9 @@
     }
   },
   "initialPermissions": {
-    "snap_confirm": {}
+    "snap_confirm": {},
+    "endowment:network-access": {},
+    "snap_manageState": {}
   },
   "manifestVersion": "0.1"
 }

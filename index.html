@@ -26,6 +26,13 @@
 
     <button class="connect">Connect</button>
     <button class="sendHello">Send Hello</button>
+    <button class="connectToMonerium">Connect To Monerium</button>
+    <button class="linkToMonerium">Link wallet</button>
+
+    <div>
+      <p>Wallet linked :</p>
+      <pre id="isLinked"></pre>
+    </div>
   </body>
 
   <script>
@@ -33,11 +40,46 @@
 
     const connectButton = document.querySelector('button.connect')
     const sendButton = document.querySelector('button.sendHello')
+    const connectToMoneriumButton = document.querySelector('button.connectToMonerium')
+    const linkToMoneriumButton = document.querySelector('button.linkToMonerium')
 
     connectButton.addEventListener('click', connect)
     sendButton.addEventListener('click', send)
+    connectToMoneriumButton.addEventListener('click', connectToMonerium)
+    linkToMoneriumButton.addEventListener('click', linkToMonerium)
 
     // here we get permissions to interact with and install the snap
+    async function connectToMonerium () {
+      try {
+        const response = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [snapId, {
+            method: 'connectToMonnerium'
+          }]
+        })
+        console.log(response);
+        document.getElementById('isLinked').textContent = "address '" + response.metamaskAddress + "'" + response.isLinked ;
+      } catch (err) {
+        console.error(err)
+        alert('Problem happened: ' + err.message || err)
+      }
+    }
+
+    async function linkToMonerium () {
+      try {
+        const response = await ethereum.request({
+          method: 'wallet_invokeSnap',
+          params: [snapId, {
+            method: 'linkToMonerium'
+          }]
+        })
+        console.log(response);
+      } catch (err) {
+        console.error(err)
+        alert('Problem happened: ' + err.message || err)
+      }
+    }
+
     async function connect () {
       await ethereum.request({
         method: 'wallet_enable',
