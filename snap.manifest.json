@@ -1,18 +1,18 @@
 {
   "version": "0.7.0",
-  "proposedName": "MetaMask Template Snap",
+  "proposedName": "https://github.com/KristenPire/MoneriumSnap.git",
   "description": "A MetaMask Snap template.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/snap-template.git"
+    "url": "https://github.com/KristenPire/MoneriumSnap.git"
   },
   "source": {
-    "shasum": "W4FN/2A1mQSjjrO95MGptw7pr+UR8913AOIksoajQSo=",
+    "shasum": "WkaphGiyaV/JZ7RcYPSYQhstvdZFqF9jqyyUpYKXJ/Y=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "@metamask/template-snap",
+        "packageName": "@monerium/snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
